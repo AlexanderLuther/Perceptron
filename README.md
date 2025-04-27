@@ -4,16 +4,16 @@ Este proyecto implementa un perceptrón simple en Python para aprender y predeci
 
 ## Descripción
 
-El proyecto consta de dos archivos principales:
+El proyecto consta de tres archivos principales:
 
 *   `main.py`: Contiene el código principal para entrenar y probar el perceptrón.
 *   `perceptron.py`: Define la clase `Perceptron` que implementa la lógica del perceptrón.
-
+*   `decision_boundary_plotter.py`: Contiene el codigo para graficar la frontera de decision.    
 El perceptrón se entrena utilizando un conjunto de datos de entrenamiento que representa las entradas y salidas esperadas para la compuerta OR. Después del entrenamiento, el perceptrón puede predecir la salida para nuevas entradas.
 
 ## Uso
 
-1.  Tener Python y NumPy instalados.
+1.  Tener Python, matplotlib y NumPy instalados.
 2.  Guarda los archivos `main.py` y `perceptron.py` en el mismo directorio.
 3.  Ejecuta el archivo `main.py`:
 
@@ -42,6 +42,16 @@ El archivo `main.py` define los datos de entrenamiento y utiliza la clase `Perce
 *   Se entrena el perceptrón utilizando los datos de entrenamiento y las salidas esperadas durante 10 épocas.
 *   Se realizan predicciones para cada entrada en el conjunto de datos de entrenamiento y se imprimen los resultados.
 
+### `decision_boundary_plotter.py`
+
+La clase `DecisionBoundaryPlotter` se encarga de visualizar la frontera de decisión del perceptrón:
+
+* `__init__(self, perceptron)`: Inicializa el plotter con una instancia del perceptrón entrenado.
+* `plot(self, training_inputs, expected_outputs)`: Genera una gráfica que muestra:
+    - Los puntos de entrenamiento (entrada positiva en verde, negativa en rojo)
+    - La línea de frontera de decisión basada en los pesos del perceptrón
+    - La región de decisión sombreada para visualizar dónde el perceptrón clasifica como 1 o 0
+
 ## Dependencias
 
-*   NumPy
+*   NumPy, Matplotlib
