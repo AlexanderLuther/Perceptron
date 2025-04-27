@@ -19,5 +19,11 @@ class Perceptron:
                 self.weights += self.learning_rate * error * inputs
                 self.bias += self.learning_rate * error
 
+    def calculate_accuracy(self, inputs, labels):
+        predictions = [self.predict(x) for x in inputs]
+        correct = sum(p == l for p, l in zip(predictions, labels))
+        accuracy = correct / len(labels)
+        return accuracy
+
     def __step_function(self, x):
         return np.where(x >= 0, 1, 0)
